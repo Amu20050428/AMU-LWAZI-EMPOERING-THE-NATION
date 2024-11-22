@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking Course</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SME-Empowering the nation-SME</h1>
+            <h2>COOKING COURSE</h2>
+        </header>
+        <section class="course-info">
+            <h3>COOKING COURSE</h3>
+            <p>→ <strong>Fees</strong>: R750</p>
+            <p>→ <strong>Purpose</strong>: To prepare and cook nutritious family meals</p>
+            <p>→ <strong>Content</strong>:</p>
+            <ul>
+                <li>Nutritional requirements for a healthy body</li>
+                <li>Types of protein, carbohydrates, and vegetables</li>
+                <li>Planning meals</li>
+                <li>Preparation and cooking meals</li>
+            </ul>
+        </section>
+        <div class="navigation">
+            <button onclick="explorePage()">Explore Page</button>
+            <button onclick="goBack()">Back</button>
+        </div>
+    </div>
+    <footer>
+        <p>Tel: (011) 123 7082</p>
+        <div class="socials">
+            <img src="instagram-icon.jpg" alt="instagram">
+            <img src="whatsapp-icon.jpg" alt="whatsApp">
+            <img src="facebook-icon.jpg" alt="facebook">
+        </div>
+    </footer>
+</body>
+</html>
+
+<script>
+    function explorePage() {
+        window.location.href = "explore.html"; // Link to explore page
+    }
+    function goBack() {
+        window.history.back();
+    }
+</script>

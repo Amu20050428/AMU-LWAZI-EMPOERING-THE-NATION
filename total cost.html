@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Cost</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SME - Empowering The Nation</h1>
+            <h2>TOTAL COST</h2>
+            <!-- Adding Empowering the Nation image -->
+            <img src="_images/empowering-img.jpg" alt="empowering the nation" style="width:100%; height:auto;">
+        </header>
+        
+        <section class="form-info">
+            <div class="personal-info">
+                <p><strong>Name & Surname</strong>: <input type="text" name="name"></p>
+                <p><strong>Phone Number</strong>: <input type="text" name="phone"></p>
+                <p><strong>Email Address</strong>: <input type="text" name="email"></p>
+            </div>
+            
+            <div class="courses">
+                <div class="six-month">
+                    <h3>Six-month Course</h3>
+                    <p>FIRST AID - R1500 <input type="checkbox"></p>
+                    <p>SEWING - R1500 <input type="checkbox"></p>
+                    <p>LANDSCAPING - R1500 <input type="checkbox"></p>
+                    <p>LIFE SKILLS - R1500 <input type="checkbox"></p>
+                    <p><strong>Total Cost: </strong>R <span id="sixMonthTotal">0</span></p>
+                </div>
+                <div class="six-week">
+                    <h3>Six-week Course</h3>
+                    <p>CHILD MINDING - R750 <input type="checkbox"></p>
+                    <p>COOKING - R750 <input type="checkbox"></p>
+                    <p>GARDEN MAINTENANCE - R750 <input type="checkbox"></p>
+                    <p><strong>Total Cost: </strong>R <span id="sixWeekTotal">0</span></p>
+                </div>
+            </div>
+        </section>
+
+        <div class="navigation">
+            <!-- Adding navigation to buttons -->
+            <button onclick="explorePage()">Explore Page</button>
+            <button onclick="goBack()">Back</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>Tel: (011) 123 7082</p>
+        <div class="socials">
+            <a href="https://instagram.com"><img src="instagram-icon.jpg" alt="Instagram"></a>
+            <a href="https://whatsapp.com"><img src="whatsapp-icon.jpg" alt="WhatsApp"></a>
+            <a href="https://facebook.com"><img src="facebook-icon.jpg" alt="Facebook"></a>
+        </div>
+    </footer>
+
+    <script>
+        const sixMonthPrices = [1500, 1500, 1500, 1500];
+        const sixWeekPrices = [750, 750, 750];
+        const sixMonthInputs = document.querySelectorAll('.six-month input[type="checkbox"]');
+        const sixWeekInputs = document.querySelectorAll('.six-week input[type="checkbox"]');
+        
+        sixMonthInputs.forEach((input, index) => {
+            input.addEventListener('change', () => {
+                updateTotal('sixMonthTotal', sixMonthInputs, sixMonthPrices);
+            });
+        });
+
+        sixWeekInputs.forEach((input, index) => {
+            input.addEventListener('change', () => {
+                updateTotal('sixWeekTotal', sixWeekInputs, sixWeekPrices);
+            });
+        });
+
+        function updateTotal(totalId, inputs, prices) {
+            let total = 0;
+            inputs.forEach((input, index) => {
+                if (input.checked) {
+                    total += prices[index];
+                }
+            });
+            document.getElementById(totalId).innerText = total;
+        }
+
+        function explorePage() {
+            window.location.href = "explore.html"; // Link to explore page
+        }
+        
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
